@@ -9,7 +9,13 @@ Function Accepted(){
     While ($i > 0){
         echo ('<br> Тест №'.$d.'');
         echo '<form action="">
+<input type="submit" value="добавить">
+</form><br>';
+        echo '<form action="">
 <input type="submit" value="изменить">
+</form><br>';
+        echo '<form action="">
+<input type="submit" value="удалить">
 </form><br>';
         $d+=1;
         $i-=1;
