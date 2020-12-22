@@ -1,10 +1,4 @@
-<?php
-    $db = new SQLite3("test.db");
-    if(!$db){
-        exit("Error connection");
-    }
-    echo ("4");
-?>
+
 
 <!doctype html>
 <html lang="ru">
@@ -13,9 +7,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Connect</title>
+    <title>Document</title>
 </head>
 <body>
+<?php
+    switch($_POST['session']){
+        case 1:
+            echo label
+            break;
 
+    }
+?>
 </body>
 </html>

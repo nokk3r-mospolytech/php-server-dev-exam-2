@@ -1,14 +1,18 @@
 <?php
-if (isset($_POST)) {
-    if ($_POST['name'] <> ''){
-        if ($_POST['name'] <> '12345'){
-            echo('Пароль не правилый <br> ');
-        } else {
-            print("Имя: " . $_POST['name']);
-        }
-        echo ('<form action="index.php">
-<input type="submit" value="вернуться назад">
-</form>');
+
+Function Accepted(){
+    include("session-list.php");
+    $bop = $answers;
+
+    $i = count($bop);
+    $d = 1;
+    While ($i > 0){
+        echo ('<br> Тест №'.$d.'');
+        echo '<form action="">
+<input type="submit" value="изменить">
+</form><br>';
+        $d+=1;
+        $i-=1;
     }
 }
 ?>
@@ -22,6 +26,8 @@ if (isset($_POST)) {
     <title>Document</title>
 </head>
 <body>
-
+<?php
+Accepted();
+?>
 </body>
 </html>

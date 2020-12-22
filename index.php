@@ -1,6 +1,21 @@
 <?php
+include("session-list.php");
+$bop = $answers;
 
+function passCheck($password)
+{
+    if ($password <> '') {
+        if ($password == '12345') {
+            header("Location: admin.php", true, 301);
+            exit;
+        }
+    }
+}
+
+if (!isset($_POST['password']))
+    $_POST['password'] = '';
 ?>
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -11,9 +26,27 @@
     <title>Цифровая версия</title>
 </head>
 <body>
-<form action="admin.php" id="admin-form" name="form1" method="post">
-    <label>Пароль: <input type="text" name="name" required></label>
-    <input type="submit" name="send" value="Войти в админку">
-</form>
+<?php
+if (!isset($_POST['password']))
+    $_POST['password'] = '';
+echo '<form action="' . passCheck($_POST['password']) . '" method="post">
+    <h1>Вход</h1>
+    <label for="password">Пароль: </label>
+    <input type="text" name="password" id="password" required placeholder="Введите пароль">
+    <input type="submit" value="Войти">
+</form>'
+?>
+<br>
+<?php
+$i = count($bop);
+$d = 1;
+While ($i > 0){
+    echo '<form action="Session/session'.$d.'.php">
+<input type="submit" value="выполнить тест №'.$d.'">
+</form><br>';
+    $d+=1;
+    $i-=1;
+}
+?>
 </body>
 </html>
