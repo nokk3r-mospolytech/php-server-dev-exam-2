@@ -13,7 +13,6 @@
 <?php
     switch($_POST['session']){
         case 1:
-            echo label
             break;
 
     }
